@@ -4,12 +4,15 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 // @author Yash Butani
 public class ProductReader implements  Reader{
+	
+	// FIXME !! to implement the ProductDataReaderInterface with adjustments I made -J
+	
     /*
 this is the Product class which represents the type that all objects in the tree will be
  */
     public static ArrayList<Product> items = new ArrayList<>();
 
-    public ProductReader() {
+    public ProductReader() implements ProductDataReaderInterface {
         // constructor does nothing right now
         /*
         when creating an object of type ReadIn just make a new object
@@ -18,7 +21,7 @@ this is the Product class which represents the type that all objects in the tree
          */
     }
 
-    public  ArrayList<Product> ScanIn() {
+    public ArrayList<Product> ScanIn() {
         try {
             File input = new File("listdata.csv");
             Scanner in = new Scanner(input);
