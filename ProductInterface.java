@@ -9,14 +9,15 @@
 
 /**
  * Product interface from the Product class will implement
- * 
+ *
  * @author
  */
 public interface ProductInterface {
-	public double getRetailPrice();
-	public double getCost();
-	public int getQuantityAvailable();
-	public int getQuantitySold();
-	public String getName();
-	public int getID();
+    public double getRetailPrice();
+    public double getCost();
+    public int getQuantityAvailable();
+    public int getQuantitySold();
+    public String getName();
+    public int getID();
+    public String toString();
 }

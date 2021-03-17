@@ -8,20 +8,20 @@
 // Notes to Grader: <optional extra notes>
 
 /**
- * 
+ *
  * Product class which represents the type that all objects in the tree will be
  */
 public class Product implements ProductInterface
 {
-    double ID;
+    int ID;
     String name;
-    double quantity_sold;
-    double quantity_available;
+    int quantity_sold;
+    int quantity_available;
     double cost;
     double retail_price;
 
     // please make sure you add in comments
-    public Product(double id, String name, double qs, double qa, double c, double rp)
+    public Product(int id, String name, int qs, int qa, double c, double rp)
     {
         this.ID = id;
         this.name = name;
@@ -41,11 +41,11 @@ public class Product implements ProductInterface
         return this.cost;
     }
     @Override
-    public double getQuantityAvailable() {
+    public int getQuantityAvailable() {
         return this.quantity_available;
     }
     @Override
-    public double getQuantitySold()
+    public int getQuantitySold()
     {
         return this.quantity_sold;
     }
@@ -55,8 +55,20 @@ public class Product implements ProductInterface
         return this.name;
     }
     @Override
-    public double getID()
+    public int getID()
     {
         return this.ID;
+    }
+
+    @Override
+    public java.lang.String toString() {
+        return "Product{" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                ", quantity_sold=" + quantity_sold +
+                ", quantity_available=" + quantity_available +
+                ", cost=" + cost +
+                ", retail_price=" + retail_price +
+                '}';
     }
 }
