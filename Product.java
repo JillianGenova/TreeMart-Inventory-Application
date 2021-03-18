@@ -9,9 +9,9 @@
 
 /**
  *
- * Product class which represents the type that all objects in the tree will be
+ * Product class which represents the type that all objects in the tree
  */
-public class Product implements ProductInterface
+public class Product implements ProductInterface,Comparable<Product>
 {
     int ID;
     String name;
@@ -20,7 +20,7 @@ public class Product implements ProductInterface
     double cost;
     double retail_price;
 
-    // please make sure you add in comments
+    //constructor takes in an id, name, quantity sold, quanity available, cost and retail price
     public Product(int id, String name, int qs, int qa, double c, double rp)
     {
         this.ID = id;
@@ -30,6 +30,8 @@ public class Product implements ProductInterface
         this.cost = c;
         this.retail_price = rp;
     }
+
+    // getters for variables
     @Override
     public double getRetailPrice()
     {
@@ -60,6 +62,9 @@ public class Product implements ProductInterface
         return this.ID;
     }
 
+    /**
+     * @return a String that details the ID,name,quantity sold, quantity available, cost and retail price
+     */
     @Override
     public java.lang.String toString() {
         return "Product{" +
@@ -70,5 +75,25 @@ public class Product implements ProductInterface
                 ", cost=" + cost +
                 ", retail_price=" + retail_price +
                 '}';
+    }
+
+    /**
+     * Compares this object with the specified object for order.  Returns a
+     * negative integer, zero, or a positive integer as this object is less
+     * than, equal to, or greater than the specified object.
+     *
+     *
+     * @param o the object to be compared.
+     * @return a negative integer, zero, or a positive integer as this object
+     * is less than, equal to, or greater than the specified object.
+     * @throws NullPointerException if the specified object is null
+     * @throws ClassCastException   if the specified object's type prevents it
+     *                              from being compared to this object.
+     */
+    @Override
+    public int compareTo(Product o) {
+        if(this.ID > o.getID()){return 1;}
+        else if(this.ID < o.getID()){return -1;}
+        return 0;
     }
 }
