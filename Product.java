@@ -35,6 +35,7 @@ public class Product implements ProductInterface,Comparable<Product>
         if(quantity_available + amount >= 0)
         {
             quantity_available += amount;
+            return true;
         }
         else
             return false;
