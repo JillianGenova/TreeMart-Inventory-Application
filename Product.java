@@ -31,6 +31,15 @@ public class Product implements ProductInterface,Comparable<Product>
         this.retail_price = rp;
     }
 
+    public boolean addStock(int amount){
+        if(quantity_available + amount >= 0)
+        {
+            quantity_available += amount;
+        }
+        else
+            return false;
+    }
+
     // getters for variables
     @Override
     public double getRetailPrice()
