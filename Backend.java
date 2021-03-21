@@ -212,14 +212,13 @@ class Backend implements BackendInterface {
 	 *
 	 */
 	private void resizeHash(){
-		hashNode[] temp = new hashNode[hashCapacity];
-		for(int i = 0; i < hashCapacity; i++){
-			temp[i] = hashTable[i];
-		}
+		hashNode[] temp = hashTable;
 		hashCapacity *= 2;
 		hashSize = 0;
+		hashTable = new hashNode[hashCapacity];
 		for(int i = 0; i < temp.length; i++){
-			addToHash(temp[i]);
+			if(temp[i] != null)
+				addToHash(new hashNode(temp[i].name, temp[i].ID));
 		}
 	}
 
@@ -257,5 +256,21 @@ class Backend implements BackendInterface {
 		throw new NoSuchElementException("Could not find product ID for that product. Perhaps the name is misspelled?");
 	}
 
+	public void printHash(){
+		for(int i = 0; i < hashCapacity; i++){
+			if( hashTable[i] != null){
+				System.out.print(hashTable[i].name + ": ");
+				System.out.println(hashTable[i].ID);
+			}
+			else
+				System.out.println("Empty");
+		}
+	}
+
+	public void clearHash(){
+		for(int i = 0; i < hashCapacity; i++){
+			hashTable[i] = null;
+		}
+	}
 }
 
