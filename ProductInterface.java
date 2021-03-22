@@ -20,4 +20,5 @@ public interface ProductInterface {
     public String getName();
     public int getID();
     public String toString();
+    public int compareTo(Product p);
 }

@@ -14,11 +14,11 @@ import java.util.ArrayList;
 import java.util.zip.DataFormatException;
 
 /**
- * MovieDataReaderInterface to be implemented by MovieDataReader
+ * ProductDataReaderInterface to be implemented by ProductReader
  *
  * @author Yash Butani
  *
  */
 public interface ProductDataReaderInterface {
-    public ArrayList<ProductInterface> readDataSet(Reader inputFileReader) throws FileNotFoundException, IOException, DataFormatException;
+    public ArrayList<Product> readDataSet(Reader inputFileReader) throws FileNotFoundException, IOException, DataFormatException;
 }

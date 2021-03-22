@@ -23,8 +23,9 @@ public class ProductReader implements  ProductDataReaderInterface{
      * @return list of all the product objects read in from the data file
      */
     @Override
-    public ArrayList<ProductInterface> readDataSet(Reader inputFileReader) throws FileNotFoundException, IOException, DataFormatException {
-        ArrayList<ProductInterface> items = new ArrayList<ProductInterface>();
+    public ArrayList<Product> readDataSet(Reader inputFileReader) 
+    		throws FileNotFoundException, IOException, DataFormatException {
+        ArrayList<Product> items = new ArrayList<Product>();
         if (inputFileReader == null) {
             throw new FileNotFoundException();
         }
@@ -35,7 +36,9 @@ public class ProductReader implements  ProductDataReaderInterface{
         while ((row = dataReader.readLine()) != null) { // iterate until reach end of file
             if(linecount == 0){}//skip the first line that is just column headings
             String[] parse = row.split(",");
-            items.add(new Product(Integer.parseInt(parse[0]), parse[1], Integer.parseInt(parse[2]), Integer.parseInt(parse[3]), Double.parseDouble(parse[4]), Double.parseDouble(parse[5])));
+            items.add(new Product(Integer.parseInt(parse[0]), parse[1], 
+            		Integer.parseInt(parse[2]), Integer.parseInt(parse[3]), 
+            		Double.parseDouble(parse[4]), Double.parseDouble(parse[5])));
             linecount++;
         }
         dataReader.close();
