@@ -1,7 +1,8 @@
 // --== CS400 File Header Information ==--
-// Name: ADD YOUR INFO HERE
-// Email: @wisc.edu
+// Name: Yash Butani
+// Email: butani@wisc.edu
 // Team: Blue
+// Role: Data Wrangler
 // Group: KE
 // TA: Keren
 // Lecturer: Gary Dahl
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.zip.DataFormatException;
 
 /**
- * ProductDataReaderInterface to be implemented by ProductReader
+ * ProductDataReaderInterface to be implemented by ProductReader class
  *
  * @author Yash Butani
  *

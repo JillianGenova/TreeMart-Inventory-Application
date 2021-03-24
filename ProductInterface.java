@@ -1,7 +1,8 @@
 // --== CS400 File Header Information ==--
 // Name: Yash Butani
-// Email: @wisc.edu
+// Email: butani@wisc.edu
 // Team: Blue
+// Role: Data Wrangler
 // Group: KE
 // TA: Keren
 // Lecturer: Gary Dahl
@@ -10,7 +11,7 @@
 /**
  * Product interface from the Product class will implement
  *
- * @author
+ * @author yash butani
  */
 public interface ProductInterface {
     public double getRetailPrice();

@@ -6,6 +6,7 @@
 // TA: <Keren>
 // Lecturer: <Heimerl>
 // Notes to Grader: <None>
+
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Frontend {
@@ -140,8 +141,9 @@ public class Frontend {
       //
       //
       for(int i = 0; i < 3; i++) {
-        lowProducts = backend.needsRestock(3); // why is this in a for loop?
+        lowProducts = backend.needsRestock(3);
       }
+      System.out.println("Low Products:" + lowProducts);
       //
       //
       //
@@ -188,8 +190,13 @@ public class Frontend {
       //
       //
       if(backend.getProduct(input1) != null) {
-        backend.sell(input1, input2); 
-        changed.add(backend.getProduct(input1));
+        try {
+        	backend.sell(input1, input2);
+        	changed.add(backend.getProduct(input1));
+        } catch (IllegalArgumentException e) {
+        	System.out.print("There was not enough " + input1 + " available to sell");
+        }
+        
       }
       //
       //
@@ -333,7 +340,7 @@ public class Frontend {
     //
     //
     //
-    String[] args = new String[] {"inventory.csv"};
+    String[] args = new String[] {"listdata.csv"};
     //
     //
     //

@@ -1,5 +1,11 @@
-// add file header
-// figure out get()
+// --== CS400 File Header Information ==--
+// Name: Sidney Hestres
+// Email: shestres@wisc.edu
+// Team: Blue
+// Role: Backend Developer
+// TA: Keren
+// Lecturer: Gary Dahl
+// Notes to Grader: <optional extra notes>
 
 import java.util.NoSuchElementException;
 import java.util.zip.DataFormatException;
@@ -73,6 +79,10 @@ class Backend implements BackendInterface {
 
 	}
 
+	/**
+	 * Gets all products and returns them in list form
+	 * @return list of all products
+	 */
 	public ArrayList<Product> getAllProducts() {
 		return this.products;
 	}
@@ -103,7 +113,6 @@ class Backend implements BackendInterface {
 			prod = rbt.get(tempProd, rbt.root);
 		} catch (NoSuchElementException e) {
 			System.out.println(e);
-			e.printStackTrace();
 			prod = null;
 		}
 		return prod;
@@ -139,7 +148,7 @@ class Backend implements BackendInterface {
 	 * @param amount
 	 * 
 	 */
-	public void sell(String productName, int amount) {
+	public void sell(String productName, int amount) throws IllegalArgumentException {
 		Product tempProd = getFromHash(productName);
 		Product prod = rbt.get(tempProd, rbt.root);
 		if (prod.addStock(amount * -1))
@@ -285,7 +294,7 @@ class Backend implements BackendInterface {
 	private hashNode getFromHashHelper(String name) {
 		int i = Math.abs(name.hashCode());
 		while (hashTable[i % hashCapacity] != null) {
-			if (hashTable[i % hashCapacity].name == name) {
+			if (hashTable[i % hashCapacity].name.equals(name)) {
 				return hashTable[i % hashCapacity];
 			} else {
 				i++;
@@ -294,6 +303,9 @@ class Backend implements BackendInterface {
 		throw new NoSuchElementException("Could not find product ID for that product. Perhaps the name is misspelled?");
 	}
 
+	/**
+	 * Prints elements in hash table for testing
+	 */
 	public void printHash(){
 		for(int i = 0; i < hashCapacity; i++){
 			if( hashTable[i] != null){

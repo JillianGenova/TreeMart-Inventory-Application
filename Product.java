@@ -1,7 +1,8 @@
 // --== CS400 File Header Information ==--
 // Name: Yash Butani
-// Email: @wisc.edu
+// Email: butani@wisc.edu
 // Team: Blue
+// Role: Data Wrangler
 // Group: KE
 // TA: Keren
 // Lecturer: Gary Dahl
@@ -10,6 +11,7 @@
 /**
  *
  * Product class which represents the type that all objects in the tree
+ * This class contains all the data and methods for the every product object
  */
 public class Product implements ProductInterface,Comparable<Product>
 {
@@ -77,13 +79,13 @@ public class Product implements ProductInterface,Comparable<Product>
      */
     @Override
     public java.lang.String toString() {
-        return "Product{" +
-                "ID=" + ID +
-                ", name='" + name + '\'' +
-                ", quantity_sold=" + quantity_sold +
-                ", quantity_available=" + quantity_available +
-                ", cost=" + cost +
-                ", retail_price=" + retail_price +
+        return "{" +
+                "ID = " + ID +
+                ", name = '" + name + '\'' +
+                ", quantity_sold = " + quantity_sold +
+                ", quantity_available = " + quantity_available +
+                ", cost = " + cost +
+                ", retail_price = " + retail_price +
                 '}';
     }
 
